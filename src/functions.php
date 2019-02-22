@@ -20,62 +20,23 @@ function task2()
     foreach (func_get_args() as $key => $value) {
         if ($key > 0) {
             $arguments[] = $value;
-        }
-    }
-    function sum($args)
-    {
-        $res = $args[0];
-        foreach ($args as $key => $value) {
-            if ($key > 0) {
-                $res += $value;
+            switch ($operation) {
+                case '+':
+                    $result = $result+$value;
+                    break;
+                case '-':
+                    $result = $result-$value;
+                    break;
+                case '*':
+                    $result = $result*$value;
+                    break;
+                case '/':
+                    $result = $result/$value;
+                    break;
             }
         }
-        return $res;
     }
-    function diff($args)
-    {
-        $res = $args[0];
-        foreach ($args as $key => $value) {
-            if ($key > 0) {
-                $res -= $value;
-            }
-        }
-        return $res;
-    }
-    function mul($args)
-    {
-        $res = $args[0];
-        foreach ($args as $key => $value) {
-            if ($key > 0) {
-                $res *= $value;
-            }
-        }
-        return $res;
-    }
-    function div($args)
-    {
-        $res = $args[0];
-        foreach ($args as $key => $value) {
-            if ($key > 0) {
-                $res /= $value;
-            }
-        }
-        return $res;
-    }
-    switch ($operation) {
-        case '+':
-            $result = sum($arguments);
-            break;
-        case '-':
-            $result = diff($arguments);
-            break;
-        case '*':
-            $result = mul($arguments);
-            break;
-        case '/':
-            $result = div($arguments);
-            break;
-    }
+
     echo implode(" $operation ", $arguments)." = $result";
 }
 
