@@ -14,30 +14,41 @@ function task1($arrayOfStrings, $toCombineStrings)
 
 function task2()
 {
+    $oper = ["+","-","*","/"];
+    var_dump($oper);
     $operation = func_get_arg(0);
-    $arguments = [];
+    print_r($operation);
+    $arguments = func_get_args();
+    print_r($arguments);
     $result = 0;
-    foreach (func_get_args() as $key => $value) {
-        if ($key > 0) {
-            $arguments[] = $value;
-            switch ($operation) {
-                case '+':
-                    $result = $result+$value;
-                    break;
-                case '-':
-                    $result = $result-$value;
-                    break;
-                case '*':
-                    $result = $result*$value;
-                    break;
-                case '/':
-                    $result = $result/$value;
-                    break;
-            }
-        }
-    }
-
-    echo implode(" $operation ", $arguments)." = $result";
+    //foreach (func_get_args() as $key => $value) {
+      //  if ($key > 0) {
+        //    $arguments[] = $value;
+            //print_r($arguments);
+          //  echo "<br>";
+            //print_r($value);
+            //switch ($operation) {
+              //  case '+':
+                    //$result = $result+$value;
+//
+  //                  break;
+    //            case '-':
+      //              $result = $value-$result;
+        //            var_dump($value);
+          //          echo "<br>";
+            ///        var_dump($result);
+               //     break;
+                //case '*':
+                  //  $result = $result*$value;
+                    //break;
+                //case '/':
+                  //  $result = $result/$value;
+                    //break;
+            //}
+        //}
+    //}
+//
+    //echo implode(" $operation ", $arguments)." = $result";*/
 }
 
 function task3($cols, $rows)
