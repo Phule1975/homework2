@@ -21,6 +21,9 @@ function task2()
     $arguments = func_get_args();
     print_r($arguments);
     $result = 0;
+    if(in_array($operation, $oper)) {
+        echo "YES";
+    }
     //foreach (func_get_args() as $key => $value) {
       //  if ($key > 0) {
         //    $arguments[] = $value;

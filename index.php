@@ -6,7 +6,7 @@ $myString = ['Функция',' должна',' принимать',' масси
 параграфе'];
 echo task1($myString, true);
 echo "<p style='font-size: 16px; font-weight: 700;'>Задание 2:</p>";
-task2('+', 1, 2, 3, 4, 5);
+task2('f', 1, 2, 3, 4, 5);
 //echo "<br>";
 //task2("-", 5, 1, 1, 1, 1);
 //echo "<br>";
