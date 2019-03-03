@@ -15,43 +15,31 @@ function task1($arrayOfStrings, $toCombineStrings)
 function task2()
 {
     $oper = ["+","-","*","/"];
-    var_dump($oper);
-    $operation = func_get_arg(0);
-    print_r($operation);
     $arguments = func_get_args();
-    print_r($arguments);
+    $operation = array_shift($arguments);
     $result = 0;
     if(in_array($operation, $oper)) {
-        echo "YES";
-    }
-    //foreach (func_get_args() as $key => $value) {
-      //  if ($key > 0) {
-        //    $arguments[] = $value;
-            //print_r($arguments);
-          //  echo "<br>";
-            //print_r($value);
-            //switch ($operation) {
-              //  case '+':
-                    //$result = $result+$value;
-//
-  //                  break;
-    //            case '-':
-      //              $result = $value-$result;
-        //            var_dump($value);
-          //          echo "<br>";
-            ///        var_dump($result);
-               //     break;
-                //case '*':
-                  //  $result = $result*$value;
-                    //break;
-                //case '/':
-                  //  $result = $result/$value;
-                    //break;
-            //}
-        //}
-    //}
-//
-    //echo implode(" $operation ", $arguments)." = $result";*/
+        foreach ($arguments as $key=>$value) {
+            if ($key > 0) {
+                switch ($operation) {
+                case "+" :
+                    $result = $result + $value;
+                    break;
+                case "-" :
+                    $result = $result - $value;
+                    break;
+                case "*" :
+                    $result = $result * $value;
+                    break;
+                case "/" :
+                    if ($value == 0) echo "Ошибка, деление на 0";
+                    else $result = $result / $value;
+                    break;
+            }
+            } else $result = $value;
+        }
+        echo implode(" $operation ", $arguments)." = $result";
+    } else echo "Первый элемент должен быть символом арефметической операции";
 }
 
 function task3($cols, $rows)
